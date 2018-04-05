@@ -2,19 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import SlideInformation from '../SlideInformation';
 
-it('renders without crashing', () => {
-  const dummyJSON = {"id": 1,
-                     "first_name": "Alan",
-                     "last_name": "Berryhill",
-                     "date": "2018-04-17",
-                     "tag": [
-                       "person",
-                       "outdoors"
-                     ]}
-  shallow(<SlideInformation slide={ dummyJSON } />);
-})
+describe('SlideInformation', () => {
 
-it('renders three paragraphs', () => {
   const dummyJSON = {"id": 1,
                      "first_name": "Alan",
                      "last_name": "Berryhill",
@@ -23,50 +12,33 @@ it('renders three paragraphs', () => {
                        "person",
                        "outdoors"
                      ]}
-  const wrapper = shallow(<SlideInformation slide={ dummyJSON } />);
-  expect(wrapper.find("p").length).toEqual(3)
-})
 
-it('renders the date of the photo', () => {
-  const dummyJSON = {"id": 1,
-                     "first_name": "Alan",
-                     "last_name": "Berryhill",
-                     "date": "2018-04-17",
-                     "tag": [
-                       "person",
-                       "outdoors"
-                     ]}
   const wrapper = shallow(<SlideInformation slide={ dummyJSON } />);
-  const dateParagraph = wrapper.find("p").at(0)
-  const date = "2018-04-17"
-  expect(dateParagraph.contains(date)).toEqual(true)
-})
 
-it("renders the artist's first and last name", () => {
-  const dummyJSON = {"id": 1,
-                     "first_name": "Alan",
-                     "last_name": "Berryhill",
-                     "date": "2018-04-17",
-                     "tag": [
-                       "person",
-                       "outdoors"
-                     ]}
-  const wrapper = shallow(<SlideInformation slide={ dummyJSON } />);
-  const nameParagraph = wrapper.find("p").at(1);
-  const name = "Alan Berryhill";
-  expect(nameParagraph.contains(name)).toEqual(true);
-})
 
-it('renders the tags of the photo', () => {
-  const dummyJSON = {"id": 1,
-                     "first_name": "Alan",
-                     "last_name": "Berryhill",
-                     "date": "2018-04-17",
-                     "tag": [
-                       "person",
-                       "outdoors"
-                     ]}
-  const wrapper = shallow(<SlideInformation slide={ dummyJSON } />);
-  const tagParagraph = wrapper.find("p").at(2);
-  expect(tagParagraph.contains("Tags: person, outdoors")).toEqual(true);
-})
+  it('renders without crashing', () => {
+    shallow(<SlideInformation slide={ dummyJSON } />);
+  });
+
+  it('renders three paragraphs', () => {
+    expect(wrapper.find("p").length).toEqual(3)
+  });
+
+  it('renders the date of the photo', () => {
+    const dateParagraph = wrapper.find("p").at(0)
+    const date = "2018-04-17"
+    expect(dateParagraph.contains(date)).toEqual(true)
+  });
+
+  it("renders the artist's first and last name", () => {
+    const nameParagraph = wrapper.find("p").at(1);
+    const name = "Alan Berryhill";
+    expect(nameParagraph.contains(name)).toEqual(true);
+  });
+
+  it('renders the tags of the photo', () => {
+    const tagParagraph = wrapper.find("p").at(2);
+    expect(tagParagraph.contains("Tags: person, outdoors")).toEqual(true);
+  });
+
+});
