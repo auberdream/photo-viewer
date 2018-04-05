@@ -17,10 +17,19 @@ class Slide extends Component {
     return found.url
   }
 
+  handleClick = (event) => {
+    const nextSlide = this.state.currentSlide += parseInt(event.target.name);
+    this.setState({
+      currentSlide: nextSlide
+    });
+  }
+
   render() {
     return (
       <div className="slide">
-        <img src={this.retrieveSlide()} />
+        <img src={ this.retrieveSlide() } />
+        <input type="button" onClick={ this.handleClick } name='-1' value="<" />
+        <input type="button" onClick={ this.handleClick } name='1' value=">" />
       </div>
     )
   }
