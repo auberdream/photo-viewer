@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Images from './resources/images'
+import SlideInformation from './SlideInformation'
 
 class Slide extends Component {
   constructor() {
@@ -14,7 +15,7 @@ class Slide extends Component {
     const found = Images.find(function(element) {
       return element.id === x.state.currentSlide
     })
-    return found.url
+    return found
   }
 
   handleClick = (event) => {
@@ -28,9 +29,10 @@ class Slide extends Component {
   render() {
     return (
       <div className="slide">
-        <img src={ this.retrieveSlide() } alt="Your browser does not support this image" />
+        <img src={ this.retrieveSlide().url } />
         <input type="button" onClick={ this.handleClick } name='-1' value="<" />
         <input type="button" onClick={ this.handleClick } name='1' value=">" />
+        <SlideInformation slide={ this.retrieveSlide() } />
       </div>
     )
   }
