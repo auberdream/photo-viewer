@@ -68,8 +68,5 @@ it('renders the tags of the photo', () => {
                      ]}
   const wrapper = shallow(<SlideInformation slide={ dummyJSON } />);
   const tagParagraph = wrapper.find("p").at(2);
-  const tags = tagParagraph.find("span");
-  console.log(tags.at(0))
-  expect(tags.at(0).contains(" person")).toEqual(true);
-  expect(tags.at(1).contains(" outdoors")).toEqual(true);
+  expect(tagParagraph.contains("Tags: person, outdoors")).toEqual(true);
 })
