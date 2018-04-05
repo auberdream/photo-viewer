@@ -18,7 +18,8 @@ class Slide extends Component {
   }
 
   handleClick = (event) => {
-    const nextSlide = this.state.currentSlide += parseInt(event.target.name);
+    const increment = parseInt(event.target.name, 10)
+    const nextSlide = this.state.currentSlide + increment;
     this.setState({
       currentSlide: nextSlide
     });
@@ -27,7 +28,7 @@ class Slide extends Component {
   render() {
     return (
       <div className="slide">
-        <img src={ this.retrieveSlide() } />
+        <img src={ this.retrieveSlide() } alt="Your browser does not support this image" />
         <input type="button" onClick={ this.handleClick } name='-1' value="<" />
         <input type="button" onClick={ this.handleClick } name='1' value=">" />
       </div>
