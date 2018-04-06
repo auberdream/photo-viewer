@@ -1,11 +1,40 @@
 import React, { Component } from 'react';
-import Slide from './Slide'
+import Slide from './Slide';
+import Images from './resources/images';
 
 class ImageSlideshow extends Component {
+  constructor() {
+    super();
+    this.state = {
+      currentSlide: 1
+    }
+  }
+
+  retrieveSlide = () => {
+    const x = this
+    const found = Images.find(function(element) {
+      return element.id === x.state.currentSlide
+    })
+    return found
+  }
+
+  handleClick = (event) => {
+    const increment = parseInt(event.target.name, 10)
+    const nextSlide = this.state.currentSlide + increment;
+    this.setState({
+      currentSlide: nextSlide
+    });
+  }
+
   render() {
     return (
       <div className="main-container">
-        <Slide />
+        <Slide slide={ this.retrieveSlide() } />
+        <div className="button-container">
+          <input type="button" onClick={ this.handleClick } name='-1' value="<" />
+          <input type="button" onClick={ this.shuffle } value="X" />
+          <input type="button" onClick={ this.handleClick } name='1' value=">" />
+        </div>
       </div>
     )
   }
