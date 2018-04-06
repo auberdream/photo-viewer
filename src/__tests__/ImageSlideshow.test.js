@@ -16,8 +16,22 @@ describe('ImageSlideshow', () => {
     expect(slide.length).toEqual(1)
   });
 
-  it('renders with three buttons', () => {
-    expect(wrapper.find('input').length).toBe(3)
+  describe('SearchBar', () => {
+
+    it('renders a SearchBar', () => {
+      expect(wrapper.find('SearchBar').length).toBe(1)
+    })
+
+  });
+
+  describe('Buttons', () => {
+
+    const buttonContainer = wrapper.find('.button-container')
+
+    it('renders with three buttons', () => {
+      expect(buttonContainer.find('input').length).toBe(3)
+    });
+
   });
 
 });

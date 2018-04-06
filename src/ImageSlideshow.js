@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Slide from './Slide';
 import Images from './resources/images';
+import SearchBar from './SearchBar'
 
 class ImageSlideshow extends Component {
   constructor() {
     super();
+    this.handler = this.handler.bind(this)
     this.state = {
       currentSlide: 1
     };
@@ -26,6 +28,12 @@ class ImageSlideshow extends Component {
     });
   };
 
+  handler = (value) => {
+    this.setState({
+      currentSlide: value
+    })
+  }
+
   randomNumber = () => {
     return Math.floor(Math.random() * (Images.length -1));
   };
@@ -39,12 +47,13 @@ class ImageSlideshow extends Component {
   render() {
     return (
       <div className="main-container">
-        <Slide slide={ this.retrieveSlide() } />
+        <SearchBar handler={ this.handler } />
         <div className="button-container">
           <input type="button" onClick={ this.handleClick } name='-1' value="<" />
           <input type="button" onClick={ this.shuffle } value="X" />
           <input type="button" onClick={ this.handleClick } name='1' value=">" />
         </div>
+        <Slide slide={ this.retrieveSlide() } />
       </div>
     )
   };
