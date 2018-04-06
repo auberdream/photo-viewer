@@ -27,14 +27,14 @@ class ImageSlideshow extends Component {
     });
   };
 
+  handler = (value) => {
+    this.setState({
+      currentSlide: value
+    })
+  }
+
   randomNumber = () => {
     return Math.floor(Math.random() * (Images.length -1));
-  };
-
-  onChange = (event) => {
-    this.setState({
-      currentSearch: event.target.value
-    });
   };
 
   shuffle = () => {
