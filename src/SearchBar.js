@@ -5,7 +5,8 @@ class SearchBar extends Component {
   constructor() {
     super();
     this.state = {
-      currentSearch: ""
+      currentSearch: "",
+      foundImages: null
     };
   };
 
@@ -13,7 +14,16 @@ class SearchBar extends Component {
     let searchTerm = event.target.value
     this.setState({
       currentSearch: searchTerm
-    });
+    }, this.findImages(searchTerm));
+  }
+
+  findImages = (searchTerm) => {
+    const found = Images.filter(image => image.first_name.includes(searchTerm) ||
+                                       image.last_name.includes(searchTerm) ||
+                                       image.tag.includes(searchTerm));
+    this.setState({
+      foundImages: found
+    })
   }
 
   render() {
