@@ -26,10 +26,26 @@ class SearchBar extends Component {
     })
   }
 
+  getImages = () => {
+    return this.state.foundImages
+  }
+
+  isNotEmpty = () => {
+    return this.state.currentSearch !== ""
+  }
+
+  isCurrentSearch = () => {
+    if (this.isNotEmpty()) {
+      return
+       // TO DO <SearchResults handler={ this.props.handler } currentSearch={ this.getImages() } />
+    }
+  }
+
   render() {
     return (
       <div className="searchbar-container">
         <input type="textbox" onChange={ this.handleChange } placeholder="What are you looking for?" />
+        { this.isCurrentSearch() }
       </div>
     )
   }
