@@ -9,15 +9,15 @@ describe('ImageSlideshow', () => {
 
   it('renders without crashing', () => {
     shallow(<ImageSlideshow />);
-  })
+  });
 
   it('renders one image', () => {
     const slide = wrapper.find('Slide')
     expect(slide.length).toEqual(1)
-  })
+  });
 
   it('renders with three buttons', () => {
     expect(wrapper.find('input').length).toBe(3)
-  })
+  });
 
 });

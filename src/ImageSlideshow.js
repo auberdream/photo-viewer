@@ -7,31 +7,34 @@ class ImageSlideshow extends Component {
     super();
     this.state = {
       currentSlide: 1
-    }
-  }
+    };
+  };
 
   retrieveSlide = () => {
-    const x = this
+    const context = this;
     const found = Images.find(function(element) {
-      return element.id === x.state.currentSlide
-    })
-    return found
-  }
+      return element.id === context.state.currentSlide
+    });
+    return found;
+  };
 
   handleClick = (event) => {
-    const increment = parseInt(event.target.name, 10)
+    const increment = parseInt(event.target.name, 10);
     const nextSlide = this.state.currentSlide + increment;
     this.setState({
       currentSlide: nextSlide
     });
-  }
+  };
+
+  randomNumber = () => {
+    return Math.floor(Math.random() * (Images.length -1));
+  };
 
   shuffle = () => {
-    const randomSlide = Math.floor(Math.random() * (Images.length -1))
     this.setState({
-      currentSlide: randomSlide
-    })
-  }
+      currentSlide: this.randomNumber()
+    });
+  };
 
   render() {
     return (
@@ -44,7 +47,7 @@ class ImageSlideshow extends Component {
         </div>
       </div>
     )
-  }
-}
+  };
+};
 
 export default ImageSlideshow;
