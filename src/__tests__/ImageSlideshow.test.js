@@ -16,12 +16,10 @@ describe('ImageSlideshow', () => {
     expect(slide.length).toEqual(1)
   });
 
-  describe('Textbox', () => {
+  describe('SearchBar', () => {
 
-    const textbox = wrapper.find('.search-container')
-
-    it('renders a textbox', () => {
-      expect(textbox.find('input').length).toBe(1)
+    it('renders a SearchBar', () => {
+      expect(wrapper.find('SearchBar').length).toBe(1)
     })
 
   });

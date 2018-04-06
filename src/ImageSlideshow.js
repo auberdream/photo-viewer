@@ -47,17 +47,13 @@ class ImageSlideshow extends Component {
   render() {
     return (
       <div className="main-container">
-        <div className="search-container">
-          <input ref="textbox" type="text" onChange={ this.onChange } placeholder="What are you looking for?"/>
-          <div id="search-results">
-          </div>
-        </div>
-        <Slide slide={ this.retrieveSlide() } />
+        <SearchBar handler={ this.handler } />
         <div className="button-container">
           <input type="button" onClick={ this.handleClick } name='-1' value="<" />
           <input type="button" onClick={ this.shuffle } value="X" />
           <input type="button" onClick={ this.handleClick } name='1' value=">" />
         </div>
+        <Slide slide={ this.retrieveSlide() } />
       </div>
     )
   };
