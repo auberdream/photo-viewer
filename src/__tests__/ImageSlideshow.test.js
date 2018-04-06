@@ -16,8 +16,24 @@ describe('ImageSlideshow', () => {
     expect(slide.length).toEqual(1)
   });
 
-  it('renders with three buttons', () => {
-    expect(wrapper.find('input').length).toBe(3)
+  describe('Textbox', () => {
+
+    const textbox = wrapper.find('.search-container')
+
+    it('renders a textbox', () => {
+      expect(textbox.find('input').length).toBe(1)
+    })
+
+  });
+
+  describe('Buttons', () => {
+
+    const buttonContainer = wrapper.find('.button-container')
+
+    it('renders with three buttons', () => {
+      expect(buttonContainer.find('input').length).toBe(3)
+    });
+
   });
 
 });

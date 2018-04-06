@@ -6,7 +6,8 @@ class ImageSlideshow extends Component {
   constructor() {
     super();
     this.state = {
-      currentSlide: 1
+      currentSlide: 1,
+      currentSearch: ""
     };
   };
 
@@ -30,6 +31,12 @@ class ImageSlideshow extends Component {
     return Math.floor(Math.random() * (Images.length -1));
   };
 
+  onChange = (event) => {
+    this.setState({
+      currentSearch: event.target.value
+    });
+  };
+
   shuffle = () => {
     this.setState({
       currentSlide: this.randomNumber()
@@ -39,6 +46,11 @@ class ImageSlideshow extends Component {
   render() {
     return (
       <div className="main-container">
+        <div className="search-container">
+          <input ref="textbox" type="text" onChange={ this.onChange } placeholder="What are you looking for?"/>
+          <div id="search-results">
+          </div>
+        </div>
         <Slide slide={ this.retrieveSlide() } />
         <div className="button-container">
           <input type="button" onClick={ this.handleClick } name='-1' value="<" />
