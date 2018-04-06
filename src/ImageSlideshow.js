@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Slide from './Slide';
 import Images from './resources/images';
+import SearchBar from './SearchBar'
 
 class ImageSlideshow extends Component {
   constructor() {
     super();
+    this.handler = this.handler.bind(this)
     this.state = {
-      currentSlide: 1,
-      currentSearch: ""
+      currentSlide: 1
     };
   };
 
