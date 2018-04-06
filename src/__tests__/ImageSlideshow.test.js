@@ -1,13 +1,23 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import ImageSlideshow from '../ImageSlideshow';
+import renderer from 'react-test-renderer';
 
-const wrapper = shallow(<ImageSlideshow />)
+describe('ImageSlideshow', () => {
 
-it('renders without crashing', () => {
-  shallow(<ImageSlideshow />);
-})
+  const wrapper = shallow(<ImageSlideshow />);
 
-it('renders with three buttons', () => {
-  expect(wrapper.find('input').length).toBe(3)
-})
+  it('renders without crashing', () => {
+    shallow(<ImageSlideshow />);
+  })
+
+  it('renders one image', () => {
+    const slide = wrapper.find('Slide')
+    expect(slide.length).toEqual(1)
+  })
+
+  it('renders with three buttons', () => {
+    expect(wrapper.find('input').length).toBe(3)
+  })
+
+});
