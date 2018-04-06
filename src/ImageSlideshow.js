@@ -26,6 +26,13 @@ class ImageSlideshow extends Component {
     });
   }
 
+  shuffle = () => {
+    const randomSlide = Math.floor(Math.random() * (Images.length -1))
+    this.setState({
+      currentSlide: randomSlide
+    })
+  }
+
   render() {
     return (
       <div className="main-container">
