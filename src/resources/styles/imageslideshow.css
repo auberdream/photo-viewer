@@ -19,22 +19,33 @@ nav {
 
 .button-container {
   height: 44px;
-  width: 130px;
+  width: 132px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 input[type=button] {
-  padding: 2px 14px 0px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43.5px;
+  padding: 0;
   background-color: rgba(33, 33, 33, 0.9);
   border: none;
   color: #fff;
   font-size: 30px;
   font-family: 'Gothic A1', sans-serif;
   font-weight: 100;
+  transition: all 0.5s ease;
+}
+
+input[type=button]:hover {
+  background-color: rgba(33, 33, 33, 0.6);
+  font-size: 28px;
 }
 
 #shuffle {
-  font-size: 26px;
+  padding-top: 2px;
+  font-size: 28px;
 }
