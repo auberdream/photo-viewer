@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SlideInformation from './SlideInformation'
+import Styles from './resources/styles/slide.css'
 
 class Slide extends Component {
   render() {
