@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,600");
+
+.slide-information {
+  width: 800px;
+  background-color: #000;
+  z-index: 5;
+  position: relative;
+  height: 170px;
+  margin-top: -90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.information-container {
+  width: 80%;
+  color: #fff;
+  font-family: 'Open Sans';
+}
+
+.photo-date {
+  color: rgb(247, 228, 100);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.photographer-name {
+  font-size: 32px;
+  font-weight: 300;
+  padding: 7px 0px 30px 0px;
+}
+
+.photo-tags {
+  font-size: 10px;
+  color: rgb(168, 168, 168);
+  font-weight: 600;
+}

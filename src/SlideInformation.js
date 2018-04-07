@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Styles from './resources/styles/slide-information.css';
 
 const SlideInformation = props => (
       <div className="slide-information">
@@ -6,7 +7,7 @@ const SlideInformation = props => (
           <p className="photo-date">
             { props.slide.date }
           </p>
-          <p className="artist-name">
+          <p className="photographer-name">
             { props.slide.first_name + ' ' + props.slide.last_name }
           </p>
           <p className="photo-tags">
