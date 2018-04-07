@@ -42,7 +42,10 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="searchbar-container">
-        <input id="textbox" type="textbox" onChange={ this.handleChange } placeholder="What are you looking for?" />
+        <div className="fake-textbox">
+          <img className="magnifying-glass" src="./images/magnifying-glass.png" />
+          <input id="textbox" type="textbox" onChange={ this.handleChange } placeholder="What are you looking for?" />
+        </div>
         <SearchResults handler={ this.props.handler } currentSearch={ this.getImages() } />
       </div>
     )

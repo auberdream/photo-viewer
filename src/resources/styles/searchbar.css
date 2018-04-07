@@ -4,7 +4,7 @@
   border-radius: 25px;
   border: none;
   padding: 12px;
-  width: 250px;
+  width: 175px;
   height: 20px;
   font-family: 'Open Sans';
   font-weight: 300;
@@ -12,4 +12,22 @@
 
 input:focus {
     outline:none;
+}
+
+.fake-textbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 25px;
+  border: none;
+  padding: 12px;
+  width: 250px;
+  height: 20px;
+  background-color: #fff;
+}
+
+.magnifying-glass {
+  height: 20px;
+  width: 20px;
 }
