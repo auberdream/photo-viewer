@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Images from './resources/images';
 import SearchResults from './SearchResults'
+import Styles from './resources/styles/searchbar.css'
 
 class SearchBar extends Component {
   constructor() {
@@ -41,7 +42,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="searchbar-container">
-        <input type="textbox" onChange={ this.handleChange } placeholder="What are you looking for?" />
+        <input id="textbox" type="textbox" onChange={ this.handleChange } placeholder="What are you looking for?" />
         <SearchResults handler={ this.props.handler } currentSearch={ this.getImages() } />
       </div>
     )
