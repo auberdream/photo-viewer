@@ -52,7 +52,7 @@ class ImageSlideshow extends Component {
           <SearchBar handler={ this.handler } />
           <div className="button-container">
             <input type="button" onClick={ this.handleClick } name='-1' value="<" />
-            <input id="shuffle" type="button" onClick={ this.shuffle } value="X" />
+            <input id="shuffle" type="button" onClick={ this.shuffle } value="S" />
             <input type="button" onClick={ this.handleClick } name='1' value=">" />
           </div>
         </nav>
