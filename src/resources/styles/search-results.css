@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300"');
+
+.searchresults-container {
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px 0px;
+  margin-top: 1px;
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 70px;
+  width: 100%;
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+.search-result span {
+  padding-left: 10px;
+}
+
+.search-img {
+  padding-left: 10px;
+  height: 60px;
+  width: 100px;
+}
+
+.search-result:hover {
+  background-color: rgb(233, 230, 230);
+}
