@@ -30,7 +30,7 @@ class SearchBar extends Component {
 
   getImages = () => {
     if (this.isNotEmpty()) {
-      return this.state.foundImages
+      return this.state.foundImages.slice(0, 3)
     };
     return []
   }
