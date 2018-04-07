@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Slide from './Slide';
 import Images from './resources/images';
-import SearchBar from './SearchBar'
+import SearchBar from './SearchBar';
+import Styles from './resources/styles/imageslideshow.css';
 
 class ImageSlideshow extends Component {
   constructor() {
@@ -47,12 +48,14 @@ class ImageSlideshow extends Component {
   render() {
     return (
       <div className="main-container">
-        <SearchBar handler={ this.handler } />
-        <div className="button-container">
-          <input type="button" onClick={ this.handleClick } name='-1' value="<" />
-          <input type="button" onClick={ this.shuffle } value="X" />
-          <input type="button" onClick={ this.handleClick } name='1' value=">" />
-        </div>
+        <nav>
+          <SearchBar handler={ this.handler } />
+          <div className="button-container">
+            <input type="button" onClick={ this.handleClick } name='-1' value="<" />
+            <input id="shuffle" type="button" onClick={ this.shuffle } value="X" />
+            <input type="button" onClick={ this.handleClick } name='1' value=">" />
+          </div>
+        </nav>
         <Slide slide={ this.retrieveSlide() } />
       </div>
     )
