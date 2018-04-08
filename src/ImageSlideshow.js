@@ -23,11 +23,21 @@ class ImageSlideshow extends Component {
 
   handleClick = (event) => {
     const increment = parseInt(event.target.name, 10);
-    const nextSlide = this.state.currentSlide + increment;
+    const nextSlide = this.getNextSlide(increment);
     this.setState({
       currentSlide: nextSlide
     });
   };
+
+  getNextSlide = (increment) => {
+    if (this.state.currentSlide + increment === 0 ) {
+      return Images.length
+    } else if (this.state.currentSlide + increment === 99) {
+      return Images[0].id
+    };
+    
+    return this.state.currentSlide + increment
+  }
 
   handler = (value) => {
     this.setState({
