@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import SearchResults from '../SearchResults';
+import renderer from 'react-test-renderer';
 
 describe('SearchResults', () => {
 
@@ -39,5 +40,12 @@ describe('SearchResults', () => {
     expect(secondName.text()).toEqual('Allyson Brar')
     expect(thirdName.text()).toEqual('Alvera Tinker')
   })
+
+  it('renders correctly', () => {
+    const tree = renderer
+      .create(<SearchResults currentSearch={ dummyCurrentSearch } handler={Function} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
 })

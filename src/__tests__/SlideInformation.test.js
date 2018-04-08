@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import SlideInformation from '../SlideInformation';
+import renderer from 'react-test-renderer';
 
 describe('SlideInformation', () => {
 
@@ -39,6 +40,13 @@ describe('SlideInformation', () => {
   it('renders the tags of the photo', () => {
     const tagParagraph = wrapper.find("p").at(2);
     expect(tagParagraph.contains("Tags: person, outdoors")).toEqual(true);
+  });
+
+  it('renders correctly', () => {
+    const tree = renderer
+      .create(<SlideInformation slide={ dummyJSON } />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
 });

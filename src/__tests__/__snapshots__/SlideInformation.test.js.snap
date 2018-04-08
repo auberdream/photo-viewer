@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SlideInformation renders correctly 1`] = `
+<div
+  className="slide-information"
+>
+  <div
+    className="information-container"
+  >
+    <p
+      className="photo-date"
+    >
+      2018-04-17
+    </p>
+    <p
+      className="photographer-name"
+    >
+      Alan Berryhill
+    </p>
+    <p
+      className="photo-tags"
+    >
+      Tags: person, outdoors
+    </p>
+  </div>
+</div>
+`;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar renders correctly 1`] = `
+<div
+  className="searchbar-container"
+>
+  <div
+    className="fake-textbox"
+  >
+    <img
+      className="magnifying-glass"
+      src="./images/magnifying-glass.png"
+    />
+    <input
+      id="textbox"
+      onChange={[Function]}
+      placeholder="What are you looking for?"
+      type="textbox"
+    />
+  </div>
+  <div
+    className="searchresults-container"
+  />
+</div>
+`;

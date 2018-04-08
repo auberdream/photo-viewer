@@ -15,4 +15,12 @@ describe('SearchBar', () => {
     expect(wrapper.find('input').length).toEqual(1)
   })
 
+  it('renders correctly', () => {
+    const tree = renderer
+      .create(<SearchBar />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+
 });

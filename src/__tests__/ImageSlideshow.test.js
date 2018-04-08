@@ -16,6 +16,13 @@ describe('ImageSlideshow', () => {
     expect(slide.length).toEqual(1)
   });
 
+  it('renders correctly', () => {
+    const tree = renderer
+      .create(<ImageSlideshow />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   describe('SearchBar', () => {
 
     it('renders a SearchBar', () => {

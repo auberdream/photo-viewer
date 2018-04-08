@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults renders correctly 1`] = `
+<div
+  className="searchresults-container"
+>
+  <div
+    className="search-result"
+    onClick={[Function]}
+  >
+    <img
+      className="search-img"
+      src="http://fakeyfake.com"
+    />
+    <span>
+      Alan Berryhill
+    </span>
+  </div>
+  <div
+    className="search-result"
+    onClick={[Function]}
+  >
+    <img
+      className="search-img"
+      src="http://www.noodles.com"
+    />
+    <span>
+      Allyson Brar
+    </span>
+  </div>
+  <div
+    className="search-result"
+    onClick={[Function]}
+  >
+    <img
+      className="search-img"
+      src="http://fakeurl.com"
+    />
+    <span>
+      Alvera Tinker
+    </span>
+  </div>
+</div>
+`;

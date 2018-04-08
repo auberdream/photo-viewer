@@ -25,4 +25,11 @@ describe('Slide', () => {
     expect(wrapper.contains(image)).toEqual(true)
   })
 
+  it('renders correctly', () => {
+    const tree = renderer
+      .create(<Slide slide={dummyJSON} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
 });
