@@ -1,6 +1,10 @@
-<img src="/images/title.png" style="width: 350px; display: block; margin-left: auto; margin-right: auto; "/>
-
-<p align="center">[How to Use](#How-do-I-use-it?) || [Tech](#Tech) || [User Stories](#User-Stories) || [Approach](#Approach) || [Areas for Development](#Areas-for-development)</p>
+<div align="center">
+  <img src="/images/title.png" />
+</div>
+<br>
+<div align="center">
+  [How to Use](#How-do-I-use-it?) || [Tech](#Tech) || [User Stories](#User-Stories) || [Approach](#Approach) || [Areas for Development](#Areas-for-development)
+</div>
 
 ### What is it?
 
