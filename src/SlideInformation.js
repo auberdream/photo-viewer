@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Styles from './resources/styles/slide-information.css';
 
 const SlideInformation = props => (
@@ -15,6 +15,6 @@ const SlideInformation = props => (
           </p>
         </div>
       </div>
-)
+);
 
 export default SlideInformation;

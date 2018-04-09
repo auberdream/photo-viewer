@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ImageSlideshow from './ImageSlideshow';
-import Styles from './resources/styles/app.css'
+import Styles from './resources/styles/app.css';
 
 class App extends Component {
   render() {
@@ -8,8 +8,8 @@ class App extends Component {
       <div className="app">
         <ImageSlideshow />
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default App;

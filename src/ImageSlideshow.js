@@ -7,7 +7,7 @@ import Styles from './resources/styles/imageslideshow.css';
 class ImageSlideshow extends Component {
   constructor() {
     super();
-    this.handler = this.handler.bind(this)
+    this.handler = this.handler.bind(this);
     this.state = {
       currentSlide: 1
     };
@@ -15,15 +15,15 @@ class ImageSlideshow extends Component {
 
   retrieveSlide = () => {
     const context = this;
-    const found = Images.find(function(element) {
+    let found = Images.find(function(element) {
       return element.id === context.state.currentSlide
     });
     return found;
   };
 
   handleClick = (event) => {
-    const increment = parseInt(event.target.name, 10);
-    const nextSlide = this.getNextSlide(increment);
+    let increment = parseInt(event.target.name, 10);
+    let nextSlide = this.getNextSlide(increment);
     this.setState({
       currentSlide: nextSlide
     });
@@ -35,18 +35,18 @@ class ImageSlideshow extends Component {
     } else if (this.state.currentSlide + increment === 99) {
       return Images[0].id
     };
-    
-    return this.state.currentSlide + increment
-  }
+
+    return this.state.currentSlide + increment;
+  };
 
   handler = (value) => {
     this.setState({
       currentSlide: value
-    })
-  }
+    });
+  };
 
   randomNumber = () => {
-    return Math.floor(Math.random() * (Images.length -1));
+    return Math.floor(Math.random() * Images.length) + 1;
   };
 
   shuffle = () => {
@@ -68,7 +68,7 @@ class ImageSlideshow extends Component {
         </nav>
         <Slide slide={ this.retrieveSlide() } />
       </div>
-    )
+    );
   };
 };
 

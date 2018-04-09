@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300"');
 
-#textbox {
+.textbox {
   border-radius: 25px;
   border: none;
   padding: 12px;

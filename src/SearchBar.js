@@ -13,43 +13,43 @@ class SearchBar extends Component {
   };
 
   handleChange = (event) => {
-    let searchTerm = event.target.value
+    let searchTerm = event.target.value;
     this.setState({
       currentSearch: searchTerm
     }, this.findImages(searchTerm));
-  }
+  };
 
   findImages = (searchTerm) => {
-    const found = Images.filter(image => image.first_name.includes(searchTerm) ||
+    let found = Images.filter(image => image.first_name.includes(searchTerm) ||
                                        image.last_name.includes(searchTerm) ||
                                        image.tag.includes(searchTerm));
     this.setState({
       foundImages: found
-    })
-  }
+    });
+  };
 
   getImages = () => {
-    if (this.isNotEmpty()) {
+    if (this.isNotEmptySearch()) {
       return this.state.foundImages.slice(0, 3)
     };
-    return []
-  }
+    return [];
+  };
 
-  isNotEmpty = () => {
-    return this.state.currentSearch !== ""
-  }
+  isNotEmptySearch = () => {
+    return this.state.currentSearch !== "";
+  };
 
   render() {
     return (
       <div className="searchbar-container">
         <div className="fake-textbox">
           <img className="magnifying-glass" src="./images/magnifying-glass.png" />
-          <input id="textbox" type="textbox" onChange={ this.handleChange } placeholder="What are you looking for?" />
+          <input className="textbox" type="textbox" onChange={ this.handleChange } placeholder="What are you looking for?" />
         </div>
         <SearchResults handler={ this.props.handler } currentSearch={ this.getImages() } />
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default SearchBar;

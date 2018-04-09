@@ -19,7 +19,7 @@ exports[`renders correctly 1`] = `
             src="./images/magnifying-glass.png"
           />
           <input
-            id="textbox"
+            className="textbox"
             onChange={[Function]}
             placeholder="What are you looking for?"
             type="textbox"
