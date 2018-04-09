@@ -19,10 +19,10 @@ nav {
 
 .button-container {
   height: 44px;
-  width: 132px;
+  width: 133px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 input[type=button] {
